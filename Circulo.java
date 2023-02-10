@@ -1,4 +1,4 @@
-package Bloque3;
+package Actividad3;
 
 public class Circulo {
 	 int radio;

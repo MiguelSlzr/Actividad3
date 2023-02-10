@@ -1,8 +1,12 @@
-package Bloque3;
+package Actividad3;
+import java.util.Scanner;
+import java.util.Arrays;
 
 public class Main {
-	
 	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		
 		Arreglos miArreglo = new Arreglos();
 		
 		
@@ -14,9 +18,8 @@ public class Main {
 		System.out.println(miArreglo.imprimirArreglo());
 			
 		System.out.println(miArreglo.buscarValor());
-		
+		System.out.println("");
 		System.out.println(miArreglo.borrarValor());
-		
 		
 	}
 	

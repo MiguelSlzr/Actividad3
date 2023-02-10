@@ -1,5 +1,6 @@
-package Bloque3;
+package Actividad3;
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Arreglos {
 	Scanner scan = new Scanner(System.in);
@@ -50,35 +51,26 @@ public class Arreglos {
 		return(answer);
 	}
 	
-	public int borrarValor() {
-		System.out.println("Introduzca un número a buscar:");
-		int i;
-		int j;
-		int delete = scan.nextInt();
-		//String answer = "";
+	public String borrarValor() {
+		System.out.println("Introduzca otro número a buscar:");
 		int enteros[];
-		int bandera = 1;
 		enteros = new int[15];
+
 		enteros[9] = 5;
-		for( i = 0; i <= enteros.length-1; i++ ) {
+
+		
+		int delete = scan.nextInt();
+		
+		for(int i = 0; i <= enteros.length-1; i++ ) {
 			if (delete == enteros[i]) {
-				
-				for ( j = i; j <= enteros.length; j++) {
+				for (int j = i; j <= enteros.length-2; j++) {
 					enteros[j] = enteros[j+1];
 				}
-				bandera = 1;
-				break;
-			}
-
-			else {
-				bandera = 0;
 			}
 		}
-		if (bandera == 0) {
-			System.out.println("El número no se encontró");
-		}
-		return(enteros[i-1]);
-
+		enteros[14] = 0;
+		System.out.println("El arreglo ahora es: ");
+		return(Arrays.toString(enteros));
 	}
 	
 	
