@@ -3,32 +3,33 @@ package Bloque3;
 public class MyStack {
 	char[] stack = new char[10];
 	char[] reversed = new char[10];
-	int top = -1;
-	int MAX = stack.length-1;
+	int top = 0;
+	int MAX = stack.length;
 	char poppedLetter;
 	int i=0;
 	
 	public void push(char letra) {
-		if(top == stack.length-1) {
+		if(top == stack.length) {
 			System.out.println("Stack is full");
 		}
 		else {
-			top = top+1;
+			
 			stack[top] = letra;  
+			top = top+1;
 		}
 	}
 	
 
 	public char pop() { 
-		top = MAX;
+
 		if(top == 0) {
 			System.out.println("Stack is empty");
 			return ('#'); 
 		}
 		else { 
+			top = top-1; 
 			poppedLetter = stack[top];
 			stack[top] = ' ';
-			MAX = MAX-1; 
 			return (poppedLetter);  
 		}
 	
@@ -42,7 +43,8 @@ public class MyStack {
 		
 		for(i = 0; i <= cadena.length()-1; i++){
 			reversed[i] = stack[cadena.length()-1-i];
-	}
+		}
+		
 		
 }
 
@@ -55,25 +57,27 @@ public class MyStack {
 				int i = 0;	
 				String[] splitString = cadena.split(" ");
 				
-				for(int j = 0; j <= splitString.length - 1; j++){
+				for(i = 0; i <= splitString.length - 1; i++){
 					palabra = palabra + splitString[i];
-					i++;
 				}
-				//System.out.println(palabra);
+				System.out.println(palabra);
 
 				for(i = 0; i <= palabra.length()-1; i++){
 					push(palabra.charAt(i));
 				}
+				
 				System.out.println(stack);
 				
 				reverse(palabra);
 				System.out.println(reversed);
 				
-				if(palabra.equals(reversed)) {
+				if(stack == reversed) {
+					System.out.println("sí es");
 					respuesta = true;
 				}
 				else {
 					respuesta = false;
+					System.out.println("no es");
 				}
 			}
 			
